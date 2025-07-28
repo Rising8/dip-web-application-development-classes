@@ -13,7 +13,7 @@ function doubleNumbers(arr) {
 let doubledNumbers = (arr) => arr.map((number) => number * 2);
 
 // Call the function with the numbers array
-let result =  doubleNumbers(numbers);
+let result = doubleNumbers(numbers);
 
 // Console log the new array
 console.log(result);
