@@ -12,5 +12,5 @@ numbers.unshift(lastElement);
 let newArray = numbers.slice(3);
 
 // Set the value of the output field inner html to the new array
-let outField = document.getElementById("OutputField")
-outField.innerHTML = newArray;
+let outField = document.getElementById("Output field");
+outputField.innerHTML = newArray;
