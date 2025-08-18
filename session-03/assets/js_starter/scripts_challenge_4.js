@@ -78,3 +78,44 @@ clearButton.addEventListener("click", function() {
   clearStorage();
   alert("Saved data cleared and form reset!");
 });
+
+
+
+// // Teacher solution
+
+// let form = document.querySelector("#save-me");
+
+// let prefix = "autosave_";
+
+// function inputHandler(event) {
+//   // Save the event target
+//   let field = event.target;
+
+//   localStorage.setItem(prefix + field.id, field.value)
+// }
+
+// function clearStorage() {
+//   //
+//   let fields = form.elements;
+
+//   for (let field of fields) {
+//     localStorage.removeItem(prefix + field.id);
+//   }
+// }
+
+// function loadSaved() {
+//   //
+//   let fields = form.elements;
+  
+//   for(let field of fields) {
+//     let saved = localStorage.getItem(prefix + field.id)
+//     if(!saved) continue;
+//     field.value = saved;
+//   }
+// }
+
+// loadSaved();
+
+// // Listen to DOM events
+// form.addEventListener("input", inputHandler);
+// form.addEventListener("submit", clearStorage);
