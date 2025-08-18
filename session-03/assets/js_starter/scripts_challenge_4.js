@@ -16,18 +16,26 @@ function getKey(target) {
  * @param  {Event} event The event object
  */
 function inputHandler(event) {
+<<<<<<< HEAD
   let target = event.target;
   let key = getKey(target);
   if (!key) return; // if no name or id, ignore
   
   // Save the value to localStorage with prefix + key
   localStorage.setItem(prefix + key, target.value);
+=======
+  // save the event target
+  let field = event.target;
+
+  localStorage.setItem(prefix + field.id, field.value);
+>>>>>>> da17e3c297817d42284d3d8f0bd61e682ca5fc32
 }
 
 /**
  * Clear all of the saved fields from storage
  */
 function clearStorage() {
+<<<<<<< HEAD
   // Loop backwards since localStorage length changes on removal
   for (let i = localStorage.length - 1; i >= 0; i--) {
     let key = localStorage.key(i);
@@ -37,12 +45,20 @@ function clearStorage() {
   }
   // Reset form fields visually
   form.reset();
+=======
+  let fields = form.elements;
+
+  for (let field of fields) {
+    localStorage.removeItem(prefix + field.id);
+  }
+>>>>>>> da17e3c297817d42284d3d8f0bd61e682ca5fc32
 }
 
 /**
  * Load saved data from localStorage
  */
 function loadSaved() {
+<<<<<<< HEAD
   for (let i = 0; i < localStorage.length; i++) {
     let key = localStorage.key(i);
     if (key.startsWith(prefix)) {
@@ -119,3 +135,20 @@ clearButton.addEventListener("click", function() {
 // // Listen to DOM events
 // form.addEventListener("input", inputHandler);
 // form.addEventListener("submit", clearStorage);
+=======
+  //
+  let fields = form.elements;
+
+  for (let field of fields) {
+    let saved = localStorage.getItem(prefix + field.id);
+    if (!saved) continue;
+    field.value = saved;
+  }
+}
+
+loadSaved();
+
+// Listen for DOM events
+form.addEventListener("input", inputHandler);
+form.addEventListener("submit", clearStorage);
+>>>>>>> da17e3c297817d42284d3d8f0bd61e682ca5fc32
