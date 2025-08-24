@@ -16,19 +16,12 @@ function getKey(target) {
  * @param  {Event} event The event object
  */
 function inputHandler(event) {
-<<<<<<< HEAD
   let target = event.target;
   let key = getKey(target);
   if (!key) return; // if no name or id, ignore
   
   // Save the value to localStorage with prefix + key
   localStorage.setItem(prefix + key, target.value);
-=======
-  // save the event target
-  let field = event.target;
-
-  localStorage.setItem(prefix + field.id, field.value);
->>>>>>> da17e3c297817d42284d3d8f0bd61e682ca5fc32
 }
 
 /**
