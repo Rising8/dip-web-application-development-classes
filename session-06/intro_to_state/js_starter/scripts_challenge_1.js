@@ -1,16 +1,29 @@
 // Challenge - Stage 1
+let addBook = function(book) { 
+    // If there's no book to do, do nothing
+    // databook
+    if (!book || book.length < 1) return;
 
-// If there's no book to do, do nothing
-// data
+    // Get the list
+    // Create a new list item
+    let list = document.querySelector('#list');
 
-// Get the list
+    // template
+    let listItem = document.createElement('li');
 
-// Create a new list item
-// template
+    // Append the item to the list
+    listItem.textContent = book;
 
-// Append the item to the list
-// render
+    // render
+    list.appendChild(listItem);
+}
 
-let book = "Harry Potter IV";
+// Creates a list
+let book = ["Harry Potter IV", " hello2"];
+// Individual items
+let book1 = "Hello";
+let book2 = "Hello 2";
 
 addBook(book);
+addBook(book1);
+addBook(book2);
