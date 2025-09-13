@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client"; // Note the change in import path
 import Lifecycle from "./LifeCycle";
 
+import UserProfile from "./components/UserObject"; // Import user profile 
+
 function ItemList({ items }) {
   // Your code goes here to return JSX
   return (
