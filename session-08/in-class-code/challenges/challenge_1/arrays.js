@@ -28,7 +28,8 @@ const user = {
 
 // The following code tries to add a new skill to the user's skills array but has an error.
 const addSkill = (user, skill) => {
-  user.skills = skill;
+  if (!user.skills) user.skills = []; // Ensure that a user skills array does exist
+  user.skills.push(skill); // Add push so that it only adds one, instead of overwriting the whole array
 };
 
 // Fix the array method usage.

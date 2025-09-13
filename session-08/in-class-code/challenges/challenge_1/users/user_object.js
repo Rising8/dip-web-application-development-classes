@@ -1,4 +1,7 @@
-const userObject = {
+// Named export called userObject, and call it in imports.js as
+// import { userObject } from "./users/user_object.js";
+
+export const userObject = {
   firstName: "John",
   lastName: "Doe",
   age: 30,
@@ -15,5 +18,3 @@ const userObject = {
   },
   isEmployed: true,
 };
-
-export default userObject;

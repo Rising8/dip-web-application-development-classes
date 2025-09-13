@@ -18,8 +18,11 @@ const userObject = {
 };
 
 // The following greeting message uses template literals incorrectly.
-const getUserInfo = () => {
-  return "Name: {user.firstName} {user.lastName}, Age: {user.age}";
+const getUserInfo = (user) => { // Need to add the (user) and pass it as a parameter so the function knows about it
+  // Change to backticks
+  // return "Name: {user.firstName} {user.lastName}, Age: {user.age}";
+
+  return `Name: ${user.firstName} ${user.lastName}, Age: ${user.age}`;
 };
 
 // Fix the template literal syntax.
