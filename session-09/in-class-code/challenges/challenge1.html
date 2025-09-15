@@ -68,12 +68,27 @@
           },
         ];
 
+        console.log(userList);
+        debugger;
+
         // Iterate over the user list and print out first name, last name, age and skills of each user
 
         // List example
         return (
           // Dont foget to wrap you list in the <ul> or <ol>tag
-          <></>
+          <ul>
+            {userList.map((user, index) => (
+              <li key={index}>
+                First Name: {user.firstName} 
+                <br></br>
+                Last Name: {user.lastName}
+                <br></br>
+                Age: {user.age}
+                <br></br>
+                Skills: {user.skills.join(", ")}
+              </li>
+            ))}
+          </ul>
         );
       }
       // Correct usage of ReactDOM.createRoot
