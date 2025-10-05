@@ -7,36 +7,33 @@ const App = () => {
   const [apodData, setApodData] = useState(null);
   const [error, setError] = useState("");
 
-  const fetchApodData = async (parameters) => {
-    const apiKey = "{your_api_key}";
+  const fetchApodData = async (params) => {
+    const apiKey = "<DEMO KEY>";
     let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 
-    // Activity 4 Follow Up
-    // Step 1 Add the parameters to the URL so the api is used properly
-    for (const key in parameters) {
-      apiUrl += `&${key}=${parameters[key]}`;
+    for (const key in params) {
+      apiUrl += `&${key}=${params[key]}`;
     }
 
-    // Step 2 Reset the state before every api call
-    setApodData(null);
-    setError("");
-
+    // data
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
-      setError("");
-      // Set the APOD data as an array even if it is only one item
       setApodData(Array.isArray(data) ? data : [data]);
+      setError("");
     } catch (err) {
       setError(`Error fetching data: ${err.message}`);
     }
   };
 
+  // template & render
   return (
     <div className="App">
       <section className="section">
         <div className="container">
+          <h1 className="title">NASA Astronomy Picture of the Day</h1>
           <ApodForm fetchApodData={fetchApodData} />
+          {error && <p className="has-text-danger">{error}</p>}
           <ApodContent apodData={apodData} />
         </div>
       </section>

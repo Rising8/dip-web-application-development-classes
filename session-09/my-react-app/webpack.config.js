@@ -6,6 +6,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    clean: true, // cleans up the /dist folder before build
   },
   module: {
     rules: [
@@ -16,18 +17,11 @@ module.exports = {
           loader: "babel-loader",
         },
       },
-      {
-        test: /\.css$/, // Match any .css file
-        use: [
-          "style-loader", // Injects CSS into the DOM
-          "css-loader", // Turns CSS into CommonJS
-        ],
-      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/web-components.html",
+      template: "./public/index.html",
     }),
   ],
   devServer: {

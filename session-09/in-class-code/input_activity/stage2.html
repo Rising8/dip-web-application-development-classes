@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+session-09/in-class-code/input_activity/stage_start.html<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,6 +13,7 @@
   </head>
   <body>
     <!-- Other HTML inputs and buttons -->
+    <div id="react-date-input"></div>
     <form>
       <div class="field">
         <label class="label">Date (YYYY-MM-DD)</label>
@@ -53,36 +54,38 @@
 
     <div id="apod-content"></div>
     <script type="text/babel">
-        const inputStyle = {
-            margin: "5px",
-            padding: "8px",
-            border: "1px solid #ccc",
-            borderRadius: "4px",
-        };
+      var newDate = "";
 
-        const handleChange = () => {
-            const newDate = event.target.value;
-            // debugger;
-        }
+      const inputStyle = {
+        margin: "5px",
+        padding: "8px",
+        border: "1px solid #ccc",
+        borderRadius: "4px",
+      };
 
-        // debugger;
+      const handleChange = (event) => {
+        const newDate = event.target.value;
+        debugger;
+      };
 
-        function DateInputComponent() {
-            return (
-                <input 
-                    class="input" 
-                    type="date" 
-                    style={inputStyle} 
-                    value={newDate} 
-                    onChange={handleChange}
-                />
-            );
-        }
+      //   debugger;
 
-        const root = ReactDOM.createRoot(
-            document.getElementById("react-date-input")
+      function DateInputComponent() {
+        return (
+          <input
+            className="input"
+            type="date"
+            style={inputStyle}
+            value={newDate}
+            onChange={handleChange}
+          />
         );
-        root.render(<DateInputComponent />);
+      }
+
+      const root = ReactDOM.createRoot(
+        document.getElementById("react-date-input")
+      );
+      root.render(<DateInputComponent />);
     </script>
   </body>
 </html>
